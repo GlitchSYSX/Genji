@@ -57,23 +57,33 @@
     padding: 28px 22px;
   }
 
-  .art{
-    width:100%;
+  .art-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .art-slot{
     aspect-ratio: 1 / 1;
     border: 1px dashed var(--panel-line);
     background:
       repeating-linear-gradient(45deg, rgba(212,255,61,0.04) 0 2px, transparent 2px 14px);
     display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 4px;
     color: var(--text-dim);
+    overflow:hidden;
+    position:relative;
   }
-  .art .icon{
-    font-size: 26px;
+  .art-slot img{
+    width:100%; height:100%; object-fit:cover;
+    display:block;
+  }
+  .art-slot .icon{
+    font-size: 18px;
     color: var(--acid-dim);
   }
-  .art .txt{
-    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  .art-slot .txt{
+    font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase;
   }
 
   .title-row{
@@ -171,9 +181,31 @@
     </div>
 
     <div class="card">
-      <div class="art">
-        <div class="icon">◇</div>
-        <div class="txt">Artwork coming soon</div>
+      <div class="art-grid">
+        <div class="art-slot" id="slot-1">
+          <img src="1.png" alt="Genji artwork 1" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
+          <div class="fallback" style="display:none; flex-direction:column; align-items:center; gap:4px;"><span class="icon">◇</span><span class="txt">1.png</span></div>
+        </div>
+        <div class="art-slot" id="slot-2">
+          <img src="2.png" alt="Genji artwork 2" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
+          <div class="fallback" style="display:none; flex-direction:column; align-items:center; gap:4px;"><span class="icon">◇</span><span class="txt">2.png</span></div>
+        </div>
+        <div class="art-slot" id="slot-3">
+          <img src="3.png" alt="Genji artwork 3" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
+          <div class="fallback" style="display:none; flex-direction:column; align-items:center; gap:4px;"><span class="icon">◇</span><span class="txt">3.png</span></div>
+        </div>
+        <div class="art-slot" id="slot-4">
+          <img src="4.png" alt="Genji artwork 4" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
+          <div class="fallback" style="display:none; flex-direction:column; align-items:center; gap:4px;"><span class="icon">◇</span><span class="txt">4.png</span></div>
+        </div>
+        <div class="art-slot" id="slot-5">
+          <img src="5.png" alt="Genji artwork 5" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
+          <div class="fallback" style="display:none; flex-direction:column; align-items:center; gap:4px;"><span class="icon">◇</span><span class="txt">5.png</span></div>
+        </div>
+        <div class="art-slot" id="slot-6">
+          <img src="6.png" alt="Genji artwork 6" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
+          <div class="fallback" style="display:none; flex-direction:column; align-items:center; gap:4px;"><span class="icon">◇</span><span class="txt">6.png</span></div>
+        </div>
       </div>
 
       <div class="title-row">
@@ -205,4 +237,3 @@
   </div>
 </body>
 </html>
-
